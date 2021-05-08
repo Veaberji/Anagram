@@ -8,11 +8,7 @@ namespace Anagramma
         {
             try
             {
-                Anagram.Reverse(" ");
-                Anagram.Reverse("  a12bc+d    efg!h");
-                Anagram.Reverse("a1bcd efg!h");
-                Anagram.Reverse("oneWord");
-                Anagram.Reverse(null);
+                Console.WriteLine(Anagram.Reverse());
             }
             catch (Exception e)
             {
