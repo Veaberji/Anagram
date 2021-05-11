@@ -8,7 +8,9 @@ namespace Anagramma
         {
             try
             {
-                Console.WriteLine(Anagram.Reverse());
+                Console.Write("Enter a sentence \n>>> ");
+                string sentence = Console.ReadLine();
+                Console.WriteLine(Anagram.Reverse(sentence));
             }
             catch (Exception e)
             {

@@ -5,10 +5,8 @@ namespace Anagramma
 {
     public class Anagram
     {
-        public static string Reverse()
+        public static string Reverse(string sentence)
         {
-            Console.Write("Enter a sentence \n>>> ");
-            string sentence = Console.ReadLine();
             if (string.IsNullOrEmpty(sentence))
             {
                 throw new ArgumentNullException("'sentence' can`t be null or empty.");
@@ -49,8 +47,7 @@ namespace Anagramma
                 reversedWords.Add(string.Join("", reversedWord));
             }
 
-            string reversedSentence = string.Join(" ", reversedWords);
-            return reversedSentence;
+            return string.Join(" ", reversedWords);
         }
     }
 }

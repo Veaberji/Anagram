@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
 
 namespace Anagramma.Tests
 {
@@ -14,11 +13,9 @@ namespace Anagramma.Tests
             string word = "oneWord";
             string expected = "droWeno";
 
-            var sr = new StringReader(word);
-            Console.SetIn(sr);
-            string actual = Anagram.Reverse();
-            Assert.AreEqual(expected, actual); ;
+            string actual = Anagram.Reverse(word);
 
+            Assert.AreEqual(expected, actual); ;
         }
 
 
@@ -28,30 +25,23 @@ namespace Anagramma.Tests
             string words = "  a12bc+d    efg!h";
             string expected = "  d12cb+a    hgf!e";
 
-            var sr = new StringReader(words);
-            Console.SetIn(sr);
-            string actual = Anagram.Reverse();
+            string actual = Anagram.Reverse(words);
+
             Assert.AreEqual(expected, actual);
-
-
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Reverse_Null_FailToReverse()
         {
-            var sr = new StringReader(null);
-            Console.SetIn(sr);
-            Anagram.Reverse();
+            Anagram.Reverse(null);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Reverse_EmptyString_FailToReverse()
         {
-            var sr = new StringReader("");
-            Console.SetIn(sr);
-            Anagram.Reverse();
+            Anagram.Reverse("");
         }
     }
 }
